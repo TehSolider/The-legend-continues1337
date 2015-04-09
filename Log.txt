@@ -1,0 +1,39 @@
+---------- Script error : event ----------
+----- Error class
+NoMethodError
+
+----- Message
+- ARGS : []
+undefined method `each' for nil:NilClass
+
+----- Event Script error location
+MAP:7 EVENT:10006 X:27,Y:25
+COMMONT_EVENT (?) - SCRIPT:
+post_battle_common_event(6)
+
+
+----- Backtrace
+Script : error tracker | Line : 133 | Method : in `eval'
+>	    exc_eval(arg)
+Script : Event Battler | Line : 517 | Method : in `post_battle_common_event'
+>	    $game_map.post_battle_common_event(common_event_id)
+Script :  | Line : 1 | Method : in `eval'
+>	
+Script : error tracker | Line : 133 | Method : in `eval'
+>	    exc_eval(arg)
+Script : error tracker | Line : 133 | Method : in `eval'
+>	    exc_eval(arg)
+Script : Game_Interpreter | Line : 1411 | Method : in `command_355'
+>	    eval(script)
+Script : Game_Interpreter | Line : 197 | Method : in `execute_command'
+>	    send(method_name) if respond_to?(method_name)
+Script : Game_Interpreter | Line : 103 | Method : in `run'
+>	      execute_command
+Script : Game_Interpreter | Line : 500 | Method : in `command_117'
+>	      child.run
+Script : Game_Interpreter | Line : 197 | Method : in `execute_command'
+>	    send(method_name) if respond_to?(method_name)
+Script : Game_Interpreter | Line : 103 | Method : in `run'
+>	      execute_command
+Script : Game_Interpreter | Line : 60 | Method : in `block in create_fiber'
+>	    @fiber = Fiber.new { run } if @list
