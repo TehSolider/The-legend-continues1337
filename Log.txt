@@ -1,89 +1,27 @@
-<<<<<<< HEAD
----------- Script error : Visual Battlers ----------
-=======
----------- Script error : Dungeon Generation ----------
->>>>>>> origin/master
+---------- Script error : event ----------
 ----- Error class
-TypeError
+NoMethodError
 
 ----- Message
-<<<<<<< HEAD
-nil can't be coerced into Fixnum
+- ARGS : []
+undefined method `x' for nil:NilClass
 
------ Common script error location at 'Visual Battlers'
-Line 296
+----- Event Script error location
+MAP:7 EVENT:4 X:13,Y:8
+COMMONT_EVENT (?) - SCRIPT:
+$game_map.add_random_enemy
 
------ Backtrace
-Script : Visual Battlers | Line : 296 | Method : in `-'
->	    value = [(@screen_x - @destination_x).abs, @move_x_rate].min
-Script : Visual Battlers | Line : 296 | Method : in `update_move_to'
->	    value = [(@screen_x - @destination_x).abs, @move_x_rate].min
-Script : Visual Battlers | Line : 543 | Method : in `update_move_to'
->	    @battler.update_move_to
-Script : Visual Battlers | Line : 518 | Method : in `update'
->	    update_move_to
-Script : Spriteset_Battle | Line : 333 | Method : in `block in update_enemies'
->	    @enemy_sprites.each {|sprite| sprite.update }
-Script : Spriteset_Battle | Line : 333 | Method : in `each'
->	    @enemy_sprites.each {|sprite| sprite.update }
-Script : Spriteset_Battle | Line : 333 | Method : in `update_enemies'
->	    @enemy_sprites.each {|sprite| sprite.update }
-Script : Spriteset_Battle | Line : 311 | Method : in `update'
->	    update_enemies
-Script : Spriteset_Battle | Line : 20 | Method : in `initialize'
->	    update
-=======
-- ARGS : [0]
-undefined method `[]' for nil:NilClass
-
------ Common script error location at 'Dungeon Generation'
-Line 340
 
 ----- Backtrace
-Script : Dungeon Generation | Line : 340 | Method : in `dungeon?'
->	      @random_dungeon = $data_mapinfos[@map_id].name.include?("@")
-Script : Dungeon Lights | Line : 39 | Method : in `update'
->	    return unless $game_map.dungeon? && !$game_map.outside?
-Script : Sprite_Character | Line : 21 | Method : in `initialize'
->	    update
-Script : Visual Battlers | Line : 566 | Method : in `initialize'
->	    super(viewport, character)
-Script : Visual Battlers | Line : 602 | Method : in `new'
->	    character_sprite = Sprite_BattleCharacter.new(@viewport1, character)
-Script : Visual Battlers | Line : 602 | Method : in `create_actor_sprite'
->	    character_sprite = Sprite_BattleCharacter.new(@viewport1, character)
-Script : Visual Battlers | Line : 593 | Method : in `block in create_actors'
->	      create_actor_sprite(actor)
-Script : Visual Battlers | Line : 591 | Method : in `each'
->	    for actor in $game_party.battle_members
-Script : Visual Battlers | Line : 591 | Method : in `create_actors'
->	    for actor in $game_party.battle_members
-Script : Spriteset_Battle | Line : 17 | Method : in `initialize'
->	    create_actors
->>>>>>> origin/master
-Script : Scene_Battle | Line : 146 | Method : in `new'
->	    @spriteset = Spriteset_Battle.new
-Script : Scene_Battle | Line : 146 | Method : in `create_spriteset'
->	    @spriteset = Spriteset_Battle.new
-Script : Battle engine | Line : 2568 | Method : in `create_spriteset'
->	    scene_battle_create_spriteset_abe
-Script : Scene_Battle | Line : 13 | Method : in `start'
->	    create_spriteset
-Script : Scene_Base | Line : 12 | Method : in `main'
->	    start
-Script : movie engine | Line : 159 | Method : in `run'
->	        @scene.main while @scene
-Script : Main | Line : 7 | Method : in `block in <main>'
->	rgss_main { SceneManager.run }
-Script :  | Line : 1 | Method : in `block in rgss_main'
->	
-Script :  | Line : 1 | Method : in `loop'
->	
-Script :  | Line : 1 | Method : in `rgss_main'
->	
-Script : Error tracker | Line : 141 | Method : in `rgss_main'
->	  exc_rgss_main(*args, &block)
-Script : Main | Line : 7 | Method : in `<main>'
->	rgss_main { SceneManager.run }
-Script :  | Line : in `eval'
->	
+Script : Error tracker | Line : 117 | Method : in `register_call'
+>	      string << "MAP:#{map_id} EVENT:#{event_id} X:#{event.x},Y:#{event.y}\n"
+Script : Error tracker | Line : 132 | Method : in `eval'
+>	    EXCLOG::register_call(arg, map_id, event_id, @depth)
+Script : Game_Interpreter | Line : 1411 | Method : in `command_355'
+>	    eval(script)
+Script : Game_Interpreter | Line : 197 | Method : in `execute_command'
+>	    send(method_name) if respond_to?(method_name)
+Script : Game_Interpreter | Line : 103 | Method : in `run'
+>	      execute_command
+Script : Game_Interpreter | Line : 60 | Method : in `block in create_fiber'
+>	    @fiber = Fiber.new { run } if @list
