@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 ---------- Script error : Visual Battlers ----------
+=======
+---------- Script error : Dungeon Generation ----------
+>>>>>>> origin/master
 ----- Error class
 TypeError
 
 ----- Message
+<<<<<<< HEAD
 nil can't be coerced into Fixnum
 
 ----- Common script error location at 'Visual Battlers'
@@ -27,6 +32,35 @@ Script : Spriteset_Battle | Line : 311 | Method : in `update'
 >	    update_enemies
 Script : Spriteset_Battle | Line : 20 | Method : in `initialize'
 >	    update
+=======
+- ARGS : [0]
+undefined method `[]' for nil:NilClass
+
+----- Common script error location at 'Dungeon Generation'
+Line 340
+
+----- Backtrace
+Script : Dungeon Generation | Line : 340 | Method : in `dungeon?'
+>	      @random_dungeon = $data_mapinfos[@map_id].name.include?("@")
+Script : Dungeon Lights | Line : 39 | Method : in `update'
+>	    return unless $game_map.dungeon? && !$game_map.outside?
+Script : Sprite_Character | Line : 21 | Method : in `initialize'
+>	    update
+Script : Visual Battlers | Line : 566 | Method : in `initialize'
+>	    super(viewport, character)
+Script : Visual Battlers | Line : 602 | Method : in `new'
+>	    character_sprite = Sprite_BattleCharacter.new(@viewport1, character)
+Script : Visual Battlers | Line : 602 | Method : in `create_actor_sprite'
+>	    character_sprite = Sprite_BattleCharacter.new(@viewport1, character)
+Script : Visual Battlers | Line : 593 | Method : in `block in create_actors'
+>	      create_actor_sprite(actor)
+Script : Visual Battlers | Line : 591 | Method : in `each'
+>	    for actor in $game_party.battle_members
+Script : Visual Battlers | Line : 591 | Method : in `create_actors'
+>	    for actor in $game_party.battle_members
+Script : Spriteset_Battle | Line : 17 | Method : in `initialize'
+>	    create_actors
+>>>>>>> origin/master
 Script : Scene_Battle | Line : 146 | Method : in `new'
 >	    @spriteset = Spriteset_Battle.new
 Script : Scene_Battle | Line : 146 | Method : in `create_spriteset'
