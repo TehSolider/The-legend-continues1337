@@ -7,21 +7,19 @@ NoMethodError
 undefined method `each' for nil:NilClass
 
 ----- Event Script error location
-MAP:7 EVENT:10006 X:27,Y:25
+MAP:7 EVENT:10000 X:8,Y:11
 COMMONT_EVENT (?) - SCRIPT:
-post_battle_common_event(6)
+$game_map.post_battle_common_event(6)
 
 
 ----- Backtrace
-Script : error tracker | Line : 133 | Method : in `eval'
+Script : Error tracker | Line : 133 | Method : in `eval'
 >	    exc_eval(arg)
-Script : Event Battler | Line : 517 | Method : in `post_battle_common_event'
->	    $game_map.post_battle_common_event(common_event_id)
 Script :  | Line : 1 | Method : in `eval'
 >	
-Script : error tracker | Line : 133 | Method : in `eval'
+Script : Error tracker | Line : 133 | Method : in `eval'
 >	    exc_eval(arg)
-Script : error tracker | Line : 133 | Method : in `eval'
+Script : Error tracker | Line : 133 | Method : in `eval'
 >	    exc_eval(arg)
 Script : Game_Interpreter | Line : 1411 | Method : in `command_355'
 >	    eval(script)
