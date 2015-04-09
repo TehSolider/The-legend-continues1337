@@ -1,37 +1,58 @@
----------- Script error : event ----------
+---------- Script error : Dungeon Generation ----------
 ----- Error class
 NoMethodError
 
 ----- Message
-- ARGS : []
-undefined method `each' for nil:NilClass
+- ARGS : [0]
+undefined method `[]' for nil:NilClass
 
------ Event Script error location
-MAP:7 EVENT:10000 X:8,Y:11
-COMMONT_EVENT (?) - SCRIPT:
-$game_map.post_battle_common_event(6)
-
+----- Common script error location at 'Dungeon Generation'
+Line 340
 
 ----- Backtrace
-Script : Error tracker | Line : 133 | Method : in `eval'
->	    exc_eval(arg)
-Script :  | Line : 1 | Method : in `eval'
+Script : Dungeon Generation | Line : 340 | Method : in `dungeon?'
+>	      @random_dungeon = $data_mapinfos[@map_id].name.include?("@")
+Script : Dungeon Lights | Line : 39 | Method : in `update'
+>	    return unless $game_map.dungeon? && !$game_map.outside?
+Script : Sprite_Character | Line : 21 | Method : in `initialize'
+>	    update
+Script : Visual Battlers | Line : 566 | Method : in `initialize'
+>	    super(viewport, character)
+Script : Visual Battlers | Line : 602 | Method : in `new'
+>	    character_sprite = Sprite_BattleCharacter.new(@viewport1, character)
+Script : Visual Battlers | Line : 602 | Method : in `create_actor_sprite'
+>	    character_sprite = Sprite_BattleCharacter.new(@viewport1, character)
+Script : Visual Battlers | Line : 593 | Method : in `block in create_actors'
+>	      create_actor_sprite(actor)
+Script : Visual Battlers | Line : 591 | Method : in `each'
+>	    for actor in $game_party.battle_members
+Script : Visual Battlers | Line : 591 | Method : in `create_actors'
+>	    for actor in $game_party.battle_members
+Script : Spriteset_Battle | Line : 17 | Method : in `initialize'
+>	    create_actors
+Script : Scene_Battle | Line : 146 | Method : in `new'
+>	    @spriteset = Spriteset_Battle.new
+Script : Scene_Battle | Line : 146 | Method : in `create_spriteset'
+>	    @spriteset = Spriteset_Battle.new
+Script : Battle engine | Line : 2568 | Method : in `create_spriteset'
+>	    scene_battle_create_spriteset_abe
+Script : Scene_Battle | Line : 13 | Method : in `start'
+>	    create_spriteset
+Script : Scene_Base | Line : 12 | Method : in `main'
+>	    start
+Script : movie engine | Line : 159 | Method : in `run'
+>	        @scene.main while @scene
+Script : Main | Line : 7 | Method : in `block in <main>'
+>	rgss_main { SceneManager.run }
+Script :  | Line : 1 | Method : in `block in rgss_main'
 >	
-Script : Error tracker | Line : 133 | Method : in `eval'
->	    exc_eval(arg)
-Script : Error tracker | Line : 133 | Method : in `eval'
->	    exc_eval(arg)
-Script : Game_Interpreter | Line : 1411 | Method : in `command_355'
->	    eval(script)
-Script : Game_Interpreter | Line : 197 | Method : in `execute_command'
->	    send(method_name) if respond_to?(method_name)
-Script : Game_Interpreter | Line : 103 | Method : in `run'
->	      execute_command
-Script : Game_Interpreter | Line : 500 | Method : in `command_117'
->	      child.run
-Script : Game_Interpreter | Line : 197 | Method : in `execute_command'
->	    send(method_name) if respond_to?(method_name)
-Script : Game_Interpreter | Line : 103 | Method : in `run'
->	      execute_command
-Script : Game_Interpreter | Line : 60 | Method : in `block in create_fiber'
->	    @fiber = Fiber.new { run } if @list
+Script :  | Line : 1 | Method : in `loop'
+>	
+Script :  | Line : 1 | Method : in `rgss_main'
+>	
+Script : Error tracker | Line : 141 | Method : in `rgss_main'
+>	  exc_rgss_main(*args, &block)
+Script : Main | Line : 7 | Method : in `<main>'
+>	rgss_main { SceneManager.run }
+Script :  | Line : in `eval'
+>	
