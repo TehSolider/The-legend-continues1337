@@ -1,37 +1,55 @@
----------- Script error : event ----------
+---------- Script error : Visual Battlers ----------
 ----- Error class
-NoMethodError
+TypeError
 
 ----- Message
-- ARGS : []
-undefined method `each' for nil:NilClass
+nil can't be coerced into Fixnum
 
------ Event Script error location
-MAP:7 EVENT:10000 X:8,Y:11
-COMMONT_EVENT (?) - SCRIPT:
-$game_map.post_battle_common_event(6)
-
+----- Common script error location at 'Visual Battlers'
+Line 296
 
 ----- Backtrace
-Script : Error tracker | Line : 133 | Method : in `eval'
->	    exc_eval(arg)
-Script :  | Line : 1 | Method : in `eval'
+Script : Visual Battlers | Line : 296 | Method : in `-'
+>	    value = [(@screen_x - @destination_x).abs, @move_x_rate].min
+Script : Visual Battlers | Line : 296 | Method : in `update_move_to'
+>	    value = [(@screen_x - @destination_x).abs, @move_x_rate].min
+Script : Visual Battlers | Line : 543 | Method : in `update_move_to'
+>	    @battler.update_move_to
+Script : Visual Battlers | Line : 518 | Method : in `update'
+>	    update_move_to
+Script : Spriteset_Battle | Line : 333 | Method : in `block in update_enemies'
+>	    @enemy_sprites.each {|sprite| sprite.update }
+Script : Spriteset_Battle | Line : 333 | Method : in `each'
+>	    @enemy_sprites.each {|sprite| sprite.update }
+Script : Spriteset_Battle | Line : 333 | Method : in `update_enemies'
+>	    @enemy_sprites.each {|sprite| sprite.update }
+Script : Spriteset_Battle | Line : 311 | Method : in `update'
+>	    update_enemies
+Script : Spriteset_Battle | Line : 20 | Method : in `initialize'
+>	    update
+Script : Scene_Battle | Line : 146 | Method : in `new'
+>	    @spriteset = Spriteset_Battle.new
+Script : Scene_Battle | Line : 146 | Method : in `create_spriteset'
+>	    @spriteset = Spriteset_Battle.new
+Script : Battle engine | Line : 2568 | Method : in `create_spriteset'
+>	    scene_battle_create_spriteset_abe
+Script : Scene_Battle | Line : 13 | Method : in `start'
+>	    create_spriteset
+Script : Scene_Base | Line : 12 | Method : in `main'
+>	    start
+Script : movie engine | Line : 159 | Method : in `run'
+>	        @scene.main while @scene
+Script : Main | Line : 7 | Method : in `block in <main>'
+>	rgss_main { SceneManager.run }
+Script :  | Line : 1 | Method : in `block in rgss_main'
 >	
-Script : Error tracker | Line : 133 | Method : in `eval'
->	    exc_eval(arg)
-Script : Error tracker | Line : 133 | Method : in `eval'
->	    exc_eval(arg)
-Script : Game_Interpreter | Line : 1411 | Method : in `command_355'
->	    eval(script)
-Script : Game_Interpreter | Line : 197 | Method : in `execute_command'
->	    send(method_name) if respond_to?(method_name)
-Script : Game_Interpreter | Line : 103 | Method : in `run'
->	      execute_command
-Script : Game_Interpreter | Line : 500 | Method : in `command_117'
->	      child.run
-Script : Game_Interpreter | Line : 197 | Method : in `execute_command'
->	    send(method_name) if respond_to?(method_name)
-Script : Game_Interpreter | Line : 103 | Method : in `run'
->	      execute_command
-Script : Game_Interpreter | Line : 60 | Method : in `block in create_fiber'
->	    @fiber = Fiber.new { run } if @list
+Script :  | Line : 1 | Method : in `loop'
+>	
+Script :  | Line : 1 | Method : in `rgss_main'
+>	
+Script : Error tracker | Line : 141 | Method : in `rgss_main'
+>	  exc_rgss_main(*args, &block)
+Script : Main | Line : 7 | Method : in `<main>'
+>	rgss_main { SceneManager.run }
+Script :  | Line : in `eval'
+>	
